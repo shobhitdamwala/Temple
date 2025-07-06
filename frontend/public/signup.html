@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕉️ Join Temple - Shiva Digital Ashram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="om-symbol">🕉️</span>
+                <h2>शिव मंदिर</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Join Temple</a></li>
+                <li><a href="kundali.html" class="nav-link">Kundali</a></li>
+                <li><a href="donation.html" class="nav-link">Donation</a></li>
+                <li><a href="ornaments.html" class="nav-link">Sacred Items</a></li>
+                <li><a href="pooja.html" class="nav-link">Pooja Events</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Join Temple Section -->
+    <section class="join-temple">
+        <div class="join-background">
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="join-content">
+                <div class="join-header">
+                    <div class="temple-icon">🏛️</div>
+                    <h1>Join Our Sacred Digital Ashram</h1>
+                    <p>Become a part of our spiritual community and receive daily blessings from Lord Shiva</p>
+                </div>
+
+                <div class="join-forms">
+                    <div class="form-tabs">
+                        <button class="tab-btn active" onclick="showTab('register')">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                        <button class="tab-btn" onclick="showTab('login')">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div class="form-container active" id="register">
+                        <form class="signup-form" onsubmit="handleRegistration(event)">
+                            <h2>🕉️ Register for Divine Blessings</h2>
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required 
+                                       placeholder="Enter your full name">
+                                <i class="fas fa-user form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       placeholder="Enter your email">
+                                <i class="fas fa-envelope form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       placeholder="Enter your phone number">
+                                <i class="fas fa-phone form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="birthDate">Date of Birth *</label>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                                <i class="fas fa-calendar form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="birthTime">Birth Time (for Kundali)</label>
+                                <input type="time" id="birthTime" name="birthTime" 
+                                       placeholder="HH:MM">
+                                <i class="fas fa-clock form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="birthPlace">Birth Place *</label>
+                                <input type="text" id="birthPlace" name="birthPlace" required 
+                                       placeholder="City, State, Country">
+                                <i class="fas fa-map-marker-alt form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="devotionLevel">Devotion Level</label>
+                                <select id="devotionLevel" name="devotionLevel">
+                                    <option value="beginner">Beginner Devotee</option>
+                                    <option value="intermediate">Regular Devotee</option>
+                                    <option value="advanced">Advanced Devotee</option>
+                                    <option value="lifelong">Lifelong Devotee</option>
+                                </select>
+                                <i class="fas fa-heart form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password *</label>
+                                <input type="password" id="password" name="password" required 
+                                       placeholder="Create strong password">
+                                <i class="fas fa-lock form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required 
+                                       placeholder="Confirm your password">
+                                <i class="fas fa-lock form-icon"></i>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                                <label for="termsAccepted">I accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="notifications" name="notifications" checked>
+                                <label for="notifications">Receive daily mantras and spiritual messages</label>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-user-plus"></i> Join Temple Family
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="form-container" id="login">
+                        <form class="login-form" onsubmit="handleLogin(event)">
+                            <h2>🔱 Welcome Back, Devotee</h2>
+                            <div class="form-group">
+                                <label for="loginEmail">Email Address *</label>
+                                <input type="email" id="loginEmail" name="loginEmail" required 
+                                       placeholder="Enter your email">
+                                <i class="fas fa-envelope form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loginPassword">Password *</label>
+                                <input type="password" id="loginPassword" name="loginPassword" required 
+                                       placeholder="Enter your password">
+                                <i class="fas fa-lock form-icon"></i>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-sign-in-alt"></i> Enter Temple
+                            </button>
+
+                            <div class="form-links">
+                                <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="join-benefits">
+                    <h3>🌟 Benefits of Joining Our Temple</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-pray"></i>
+                            <h4>Daily Blessings</h4>
+                            <p>Receive daily mantras and spiritual messages</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i>
+                            <h4>Personalized Kundali</h4>
+                            <p>Get your detailed astrological chart</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Pooja Reminders</h4>
+                            <p>Never miss important spiritual dates</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-gift"></i>
+                            <h4>Exclusive Access</h4>
+                            <p>Access to special ceremonies and events</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🕉️ शिव मंदिर</h3>
+                    <p>Join our sacred digital ashram and experience divine blessings</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="kundali.html">Kundali</a></li>
+                        <li><a href="donation.html">Donations</a></li>
+                        <li><a href="pooja.html">Pooja Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Temple</h4>
+                    <p>Email: blessings@shivatemple.com</p>
+                    <p>Phone: +91 9876543210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Temple. Made with devotion and love. 🙏</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const forms = document.querySelectorAll('.form-container');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            forms.forEach(form => form.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Registration form handler
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (data.password !== data.confirmPassword) {
+                showNotification('Passwords do not match!', 'error');
+                return;
+            }
+            
+            // Store user data in localStorage (mock registration)
+            const userData = {
+                fullName: data.fullName,
+                email: data.email,
+                phone: data.phone,
+                birthDate: data.birthDate,
+                birthTime: data.birthTime,
+                birthPlace: data.birthPlace,
+                devotionLevel: data.devotionLevel,
+                joinDate: new Date().toISOString(),
+                notifications: data.notifications === 'on'
+            };
+            
+            localStorage.setItem('templeUser', JSON.stringify(userData));
+            localStorage.setItem('userLoggedIn', 'true');
+            
+            showNotification('🕉️ Welcome to our temple family! Registration successful!', 'success');
+            
+            // Redirect to dashboard or home page
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        }
+
+        // Login form handler
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Check if user exists in localStorage
+            const storedUser = localStorage.getItem('templeUser');
+            if (storedUser) {
+                const userData = JSON.parse(storedUser);
+                
+                // Simple email validation (in real app, this would be server-side)
+                if (userData.email === data.loginEmail) {
+                    localStorage.setItem('userLoggedIn', 'true');
+                    showNotification('🔱 Welcome back, devotee! Login successful!', 'success');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    showNotification('Invalid email or password!', 'error');
+                }
+            } else {
+                showNotification('No account found. Please register first.', 'error');
+            }
+        }
+
+        // Forgot password handler
+        function showForgotPassword() {
+            const email = prompt('Please enter your email address:');
+            if (email) {
+                showNotification('Password reset instructions sent to your email!', 'success');
+            }
+        }
+
+        // Form animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const formInputs = document.querySelectorAll('.form-group input, .form-group select');
+            
+            formInputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.parentElement.classList.remove('focused');
+                    }
+                });
+                
+                // Check if input has value on load
+                if (input.value) {
+                    input.parentElement.classList.add('focused');
+                }
+            });
+        });
+
+        // Password strength checker
+        document.getElementById('password').addEventListener('input', (e) => {
+            const password = e.target.value;
+            const strength = checkPasswordStrength(password);
+            
+            // Remove existing strength indicator
+            const existingIndicator = document.querySelector('.password-strength');
+            if (existingIndicator) {
+                existingIndicator.remove();
+            }
+            
+            // Add new strength indicator
+            const indicator = document.createElement('div');
+            indicator.className = `password-strength ${strength.class}`;
+            indicator.textContent = strength.text;
+            indicator.style.cssText = `
+                margin-top: 5px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: ${strength.color};
+            `;
+            
+            e.target.parentElement.appendChild(indicator);
+        });
+
+        function checkPasswordStrength(password) {
+            if (password.length < 6) {
+                return { class: 'weak', text: 'Weak password', color: '#e74c3c' };
+            } else if (password.length < 8) {
+                return { class: 'medium', text: 'Medium password', color: '#f39c12' };
+            } else if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/)) {
+                return { class: 'strong', text: 'Strong password', color: '#27ae60' };
+            } else {
+                return { class: 'medium', text: 'Medium password', color: '#f39c12' };
+            }
+        }
+
+        // Check if user is already logged in
+        if (localStorage.getItem('userLoggedIn') === 'true') {
+            showNotification('You are already logged in!', 'info');
+            // Optionally redirect to dashboard
+        }
+    </script>
+</body>
+</html>

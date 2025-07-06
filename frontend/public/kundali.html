@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Kundali Reading - Shiva Temple</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="om-symbol">🕉️</span>
+                <h2>शिव मंदिर</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="signup.html" class="nav-link">Join Temple</a></li>
+                <li><a href="#" class="nav-link active">Kundali</a></li>
+                <li><a href="donation.html" class="nav-link">Donation</a></li>
+                <li><a href="ornaments.html" class="nav-link">Sacred Items</a></li>
+                <li><a href="pooja.html" class="nav-link">Pooja Events</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Kundali Section -->
+    <section class="kundali-section">
+        <div class="kundali-background">
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="kundali-header">
+                <div class="zodiac-symbol">♈</div>
+                <h1>Sacred Kundali Reading</h1>
+                <p>Discover your cosmic blueprint through ancient Vedic astrology</p>
+            </div>
+
+            <div class="kundali-content">
+                <div class="kundali-form-section">
+                    <div class="form-card">
+                        <h2>📊 Generate Your Kundali</h2>
+                        <form id="kundaliForm" onsubmit="generateKundali(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="personName">Full Name *</label>
+                                    <input type="text" id="personName" name="personName" required 
+                                           placeholder="Enter full name">
+                                    <i class="fas fa-user form-icon"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender *</label>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <i class="fas fa-venus-mars form-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="birthDate">Birth Date *</label>
+                                    <input type="date" id="birthDate" name="birthDate" required>
+                                    <i class="fas fa-calendar form-icon"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthTime">Birth Time *</label>
+                                    <input type="time" id="birthTime" name="birthTime" required>
+                                    <i class="fas fa-clock form-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="birthPlace">Birth Place *</label>
+                                <input type="text" id="birthPlace" name="birthPlace" required 
+                                       placeholder="City, State, Country">
+                                <i class="fas fa-map-marker-alt form-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kundaliType">Kundali Type</label>
+                                <select id="kundaliType" name="kundaliType">
+                                    <option value="basic">Basic Reading</option>
+                                    <option value="detailed">Detailed Analysis</option>
+                                    <option value="compatibility">Compatibility Check</option>
+                                    <option value="career">Career Guidance</option>
+                                    <option value="health">Health Prediction</option>
+                                </select>
+                                <i class="fas fa-star form-icon"></i>
+                            </div>
+
+                            <button type="submit" class="generate-btn">
+                                <i class="fas fa-magic"></i> Generate Kundali
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="kundali-info">
+                    <div class="info-card">
+                        <h3>🔮 What is Kundali?</h3>
+                        <p>A Kundali (also known as Janam Kundali or Birth Chart) is a cosmic map of planetary positions at the time of your birth. It reveals insights about your personality, life path, relationships, and destiny according to ancient Vedic astrology.</p>
+                        
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Planetary Positions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Personality Traits</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Career Guidance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rings-wedding"></i>
+                                <span>Relationship Insights</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Health Predictions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-coins"></i>
+                                <span>Financial Outlook</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>⭐ Zodiac Signs</h3>
+                        <div class="zodiac-grid">
+                            <div class="zodiac-item">♈ Aries</div>
+                            <div class="zodiac-item">♉ Taurus</div>
+                            <div class="zodiac-item">♊ Gemini</div>
+                            <div class="zodiac-item">♋ Cancer</div>
+                            <div class="zodiac-item">♌ Leo</div>
+                            <div class="zodiac-item">♍ Virgo</div>
+                            <div class="zodiac-item">♎ Libra</div>
+                            <div class="zodiac-item">♏ Scorpio</div>
+                            <div class="zodiac-item">♐ Sagittarius</div>
+                            <div class="zodiac-item">♑ Capricorn</div>
+                            <div class="zodiac-item">♒ Aquarius</div>
+                            <div class="zodiac-item">♓ Pisces</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kundali Results -->
+            <div class="kundali-results" id="kundaliResults" style="display: none;">
+                <h2>🌟 Your Sacred Kundali</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Basic Information</h3>
+                        <div id="basicInfo"></div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Planetary Positions</h3>
+                        <div id="planetaryInfo"></div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Predictions</h3>
+                        <div id="predictions"></div>
+                    </div>
+                    <div class="result-card chart-card">
+                        <h3>Birth Chart</h3>
+                        <div class="kundali-chart" id="kundaliChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🕉️ शिव मंदिर</h3>
+                    <p>Sacred Vedic astrology for spiritual guidance</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="signup.html">Join Temple</a></li>
+                        <li><a href="donation.html">Donations</a></li>
+                        <li><a href="pooja.html">Pooja Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Astrology Services</h4>
+                    <p>Daily Horoscope</p>
+                    <p>Compatibility Matching</p>
+                    <p>Career Guidance</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Temple. Made with devotion and love. 🙏</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Kundali generation function
+        function generateKundali(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading animation
+            showNotification('🔮 Generating your sacred Kundali...', 'info');
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                const kundaliData = generateMockKundali(data);
+                displayKundaliResults(kundaliData);
+                
+                // Scroll to results
+                document.getElementById('kundaliResults').scrollIntoView({ behavior: 'smooth' });
+                
+                showNotification('✨ Your Kundali is ready!', 'success');
+            }, 3000);
+        }
+
+        // Generate mock Kundali data
+        function generateMockKundali(formData) {
+            const zodiacSigns = ['♈ Aries', '♉ Taurus', '♊ Gemini', '♋ Cancer', '♌ Leo', '♍ Virgo', 
+                               '♎ Libra', '♏ Scorpio', '♐ Sagittarius', '♑ Capricorn', '♒ Aquarius', '♓ Pisces'];
+            
+            const planets = ['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'];
+            
+            const randomZodiac = zodiacSigns[Math.floor(Math.random() * zodiacSigns.length)];
+            const randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+            
+            return {
+                name: formData.personName,
+                gender: formData.gender,
+                birthDate: formData.birthDate,
+                birthTime: formData.birthTime,
+                birthPlace: formData.birthPlace,
+                sunSign: randomZodiac,
+                moonSign: zodiacSigns[Math.floor(Math.random() * zodiacSigns.length)],
+                ascendant: zodiacSigns[Math.floor(Math.random() * zodiacSigns.length)],
+                rulingPlanet: randomPlanet,
+                luckyNumber: Math.floor(Math.random() * 9) + 1,
+                luckyColor: ['Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange'][Math.floor(Math.random() * 6)],
+                luckyDay: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][Math.floor(Math.random() * 7)]
+            };
+        }
+
+        // Display Kundali results
+        function displayKundaliResults(kundaliData) {
+            const resultsSection = document.getElementById('kundaliResults');
+            
+            // Basic Information
+            document.getElementById('basicInfo').innerHTML = `
+                <div class="info-item">
+                    <strong>Name:</strong> ${kundaliData.name}
+                </div>
+                <div class="info-item">
+                    <strong>Gender:</strong> ${kundaliData.gender}
+                </div>
+                <div class="info-item">
+                    <strong>Birth Date:</strong> ${kundaliData.birthDate}
+                </div>
+                <div class="info-item">
+                    <strong>Birth Time:</strong> ${kundaliData.birthTime}
+                </div>
+                <div class="info-item">
+                    <strong>Birth Place:</strong> ${kundaliData.birthPlace}
+                </div>
+            `;
+
+            // Planetary Information
+            document.getElementById('planetaryInfo').innerHTML = `
+                <div class="planet-item">
+                    <strong>Sun Sign:</strong> ${kundaliData.sunSign}
+                </div>
+                <div class="planet-item">
+                    <strong>Moon Sign:</strong> ${kundaliData.moonSign}
+                </div>
+                <div class="planet-item">
+                    <strong>Ascendant:</strong> ${kundaliData.ascendant}
+                </div>
+                <div class="planet-item">
+                    <strong>Ruling Planet:</strong> ${kundaliData.rulingPlanet}
+                </div>
+                <div class="planet-item">
+                    <strong>Lucky Number:</strong> ${kundaliData.luckyNumber}
+                </div>
+                <div class="planet-item">
+                    <strong>Lucky Color:</strong> ${kundaliData.luckyColor}
+                </div>
+                <div class="planet-item">
+                    <strong>Lucky Day:</strong> ${kundaliData.luckyDay}
+                </div>
+            `;
+
+            // Predictions
+            document.getElementById('predictions').innerHTML = `
+                <div class="prediction-item">
+                    <h4>🔮 Life Path</h4>
+                    <p>You are destined for great achievements in your chosen field. Your natural leadership abilities will guide you to success.</p>
+                </div>
+                <div class="prediction-item">
+                    <h4>💖 Relationships</h4>
+                    <p>Venus is strongly placed in your chart, indicating harmonious relationships and potential for lasting love.</p>
+                </div>
+                <div class="prediction-item">
+                    <h4>💼 Career</h4>
+                    <p>Your ruling planet ${kundaliData.rulingPlanet} suggests careers in communication, technology, or spiritual fields.</p>
+                </div>
+                <div class="prediction-item">
+                    <h4>🌿 Health</h4>
+                    <p>Focus on maintaining balance in your life. Regular meditation and yoga will benefit your overall wellbeing.</p>
+                </div>
+            `;
+
+            // Create simple birth chart
+            createBirthChart();
+            
+            // Show results
+            resultsSection.style.display = 'block';
+        }
+
+        // Create a simple birth chart visualization
+        function createBirthChart() {
+            const chartContainer = document.getElementById('kundaliChart');
+            
+            chartContainer.innerHTML = `
+                <div class="chart-container">
+                    <div class="chart-square">
+                        <div class="chart-section" style="top: 0; left: 0;">
+                            <span class="house-number">12</span>
+                            <span class="planet">♃</span>
+                        </div>
+                        <div class="chart-section" style="top: 0; left: 33.33%;">
+                            <span class="house-number">1</span>
+                            <span class="planet">☉</span>
+                        </div>
+                        <div class="chart-section" style="top: 0; left: 66.66%;">
+                            <span class="house-number">2</span>
+                            <span class="planet">☽</span>
+                        </div>
+                        <div class="chart-section" style="top: 33.33%; left: 66.66%;">
+                            <span class="house-number">3</span>
+                            <span class="planet">♂</span>
+                        </div>
+                        <div class="chart-section" style="top: 66.66%; left: 66.66%;">
+                            <span class="house-number">4</span>
+                            <span class="planet">☿</span>
+                        </div>
+                        <div class="chart-section" style="top: 66.66%; left: 33.33%;">
+                            <span class="house-number">5</span>
+                            <span class="planet">♀</span>
+                        </div>
+                        <div class="chart-section" style="top: 66.66%; left: 0;">
+                            <span class="house-number">6</span>
+                            <span class="planet">♄</span>
+                        </div>
+                        <div class="chart-section" style="top: 33.33%; left: 0;">
+                            <span class="house-number">7</span>
+                            <span class="planet">☊</span>
+                        </div>
+                        <div class="chart-section" style="top: 33.33%; left: 33.33%;">
+                            <span class="house-number">8</span>
+                            <span class="planet">☋</span>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <p><strong>Planetary Symbols:</strong></p>
+                        <p>☉ Sun | ☽ Moon | ♂ Mars | ☿ Mercury | ♃ Jupiter | ♀ Venus | ♄ Saturn | ☊ Rahu | ☋ Ketu</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Auto-fill form if user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const userData = localStorage.getItem('templeUser');
+            if (userData) {
+                const user = JSON.parse(userData);
+                document.getElementById('personName').value = user.fullName || '';
+                document.getElementById('birthDate').value = user.birthDate || '';
+                document.getElementById('birthTime').value = user.birthTime || '';
+                document.getElementById('birthPlace').value = user.birthPlace || '';
+            }
+        });
+
+        // Add zodiac symbol rotation animation
+        const zodiacSymbol = document.querySelector('.zodiac-symbol');
+        if (zodiacSymbol) {
+            setInterval(() => {
+                const zodiacSymbols = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
+                const currentSymbol = zodiacSymbol.textContent;
+                const currentIndex = zodiacSymbols.indexOf(currentSymbol);
+                const nextIndex = (currentIndex + 1) % zodiacSymbols.length;
+                zodiacSymbol.textContent = zodiacSymbols[nextIndex];
+            }, 2000);
+        }
+    </script>
+
+    <style>
+        .kundali-section {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #4A90E2 0%, #FF6B35 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .kundali-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="15" fill="white" opacity="0.1">⭐</text></svg>');
+        }
+
+        .kundali-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .zodiac-symbol {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .kundali-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .kundali-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .form-card, .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-card h2, .info-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-bg);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .feature-item i {
+            color: var(--primary-color);
+        }
+
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .zodiac-item {
+            padding: 0.5rem;
+            text-align: center;
+            background: var(--light-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .zodiac-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .kundali-results {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .kundali-results h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .result-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-item, .planet-item {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .prediction-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .prediction-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-card {
+            grid-column: span 2;
+        }
+
+        .chart-container {
+            text-align: center;
+        }
+
+        .chart-square {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            background: var(--light-color);
+        }
+
+        .chart-section {
+            position: absolute;
+            width: 33.33%;
+            height: 33.33%;
+            border: 1px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .house-number {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .planet {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .chart-legend {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .kundali-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .zodiac-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chart-card {
+                grid-column: span 1;
+            }
+            
+            .chart-square {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</body>
+</html>
