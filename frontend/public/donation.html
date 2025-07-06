@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 Sacred Donations - Shiva Temple</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="om-symbol">🕉️</span>
+                <h2>शिव मंदिर</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="signup.html" class="nav-link">Join Temple</a></li>
+                <li><a href="kundali.html" class="nav-link">Kundali</a></li>
+                <li><a href="#" class="nav-link active">Donation</a></li>
+                <li><a href="ornaments.html" class="nav-link">Sacred Items</a></li>
+                <li><a href="pooja.html" class="nav-link">Pooja Events</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+        <div class="donation-background">
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="donation-header">
+                <div class="donation-icon">🏛️</div>
+                <h1>Sacred Donations</h1>
+                <p>Support our temple and receive divine blessings from Lord Shiva</p>
+                <div class="blessing-quote">
+                    <p>"दानं धर्मः परो लोके" - Charity is the highest dharma in this world</p>
+                </div>
+            </div>
+
+            <div class="donation-content">
+                <div class="donation-options">
+                    <div class="donation-card featured">
+                        <div class="card-header">
+                            <h3>🔥 Maha Aarti Donation</h3>
+                            <div class="donation-amount">₹1,108</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Support our daily Maha Aarti ceremony and receive special blessings</p>
+                            <ul class="benefits-list">
+                                <li>✨ Name chanted in daily prayers</li>
+                                <li>🌸 Prasad delivery</li>
+                                <li>📿 Blessed rudraksha</li>
+                                <li>🔱 Digital blessing certificate</li>
+                            </ul>
+                            <button class="donate-btn" onclick="makeDonation(1108, 'Maha Aarti')">
+                                <i class="fas fa-gift"></i> Donate Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="card-header">
+                            <h3>🌙 Evening Aarti</h3>
+                            <div class="donation-amount">₹501</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Participate in our evening aarti ceremony remotely</p>
+                            <ul class="benefits-list">
+                                <li>🕯️ Lamp lit in your name</li>
+                                <li>🙏 Live ceremony streaming</li>
+                                <li>📱 Digital blessings</li>
+                            </ul>
+                            <button class="donate-btn" onclick="makeDonation(501, 'Evening Aarti')">
+                                <i class="fas fa-candle-holder"></i> Donate Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="card-header">
+                            <h3>🌺 Flower Offering</h3>
+                            <div class="donation-amount">₹251</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Offer fresh flowers to Lord Shiva with your prayers</p>
+                            <ul class="benefits-list">
+                                <li>🌸 Fresh flower offering</li>
+                                <li>🤲 Personal prayers</li>
+                                <li>📸 Offering photo</li>
+                            </ul>
+                            <button class="donate-btn" onclick="makeDonation(251, 'Flower Offering')">
+                                <i class="fas fa-seedling"></i> Donate Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="card-header">
+                            <h3>🥛 Abhishek Donation</h3>
+                            <div class="donation-amount">₹786</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Support the sacred abhishek ceremony with milk and honey</p>
+                            <ul class="benefits-list">
+                                <li>🥛 Milk abhishek</li>
+                                <li>🍯 Honey offering</li>
+                                <li>🔱 Shiva blessings</li>
+                            </ul>
+                            <button class="donate-btn" onclick="makeDonation(786, 'Abhishek')">
+                                <i class="fas fa-tint"></i> Donate Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="card-header">
+                            <h3>🍽️ Annadaan</h3>
+                            <div class="donation-amount">₹2,108</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Feed the hungry and earn eternal blessings</p>
+                            <ul class="benefits-list">
+                                <li>🍚 Feed 50 people</li>
+                                <li>🏆 Annadaan certificate</li>
+                                <li>🌟 Special karma points</li>
+                            </ul>
+                            <button class="donate-btn" onclick="makeDonation(2108, 'Annadaan')">
+                                <i class="fas fa-utensils"></i> Donate Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="donation-card custom">
+                        <div class="card-header">
+                            <h3>💝 Custom Donation</h3>
+                            <div class="donation-amount">Any Amount</div>
+                        </div>
+                        <div class="card-body">
+                            <p>Choose your own donation amount based on your devotion</p>
+                            <div class="custom-amount">
+                                <input type="number" id="customAmount" placeholder="Enter amount" min="1">
+                                <input type="text" id="customPurpose" placeholder="Purpose (optional)">
+                            </div>
+                            <button class="donate-btn" onclick="makeCustomDonation()">
+                                <i class="fas fa-heart"></i> Donate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donation-impact">
+                    <h2>🌟 Impact of Your Donations</h2>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <div class="impact-icon">🏛️</div>
+                            <h3>Temple Maintenance</h3>
+                            <p>Keep our sacred temple clean and well-maintained for all devotees</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">🍽️</div>
+                            <h3>Food Distribution</h3>
+                            <p>Provide free meals to the needy and hungry visitors</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">📚</div>
+                            <h3>Spiritual Education</h3>
+                            <p>Support our programs for teaching ancient wisdom and values</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-icon">🎭</div>
+                            <h3>Cultural Events</h3>
+                            <p>Organize festivals and celebrations to preserve our heritage</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donation-testimonials">
+                    <h2>💬 Devotee Testimonials</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"After donating to the temple, I felt a deep sense of peace and received unexpected blessings in my business."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <strong>- Rajesh Kumar</strong>
+                                <span>Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The Maha Aarti donation changed my life. I received the certificate and felt Lord Shiva's presence."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <strong>- Priya Sharma</strong>
+                                <span>Delhi</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Contributing to Annadaan gave me immense satisfaction. Feeding others is truly divine service."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <strong>- Amit Singh</strong>
+                                <span>Kolkata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Modal -->
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>🙏 Complete Your Donation</h2>
+            <div class="modal-body">
+                <div class="donation-summary">
+                    <h3 id="donationType">Donation Type</h3>
+                    <div class="amount-display">₹<span id="donationAmount">0</span></div>
+                </div>
+                
+                <form id="donationForm" onsubmit="processDonation(event)">
+                    <div class="form-group">
+                        <label for="donorName">Your Name *</label>
+                        <input type="text" id="donorName" name="donorName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donorEmail">Email Address *</label>
+                        <input type="email" id="donorEmail" name="donorEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donorPhone">Phone Number *</label>
+                        <input type="tel" id="donorPhone" name="donorPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donorAddress">Address</label>
+                        <textarea id="donorAddress" name="donorAddress" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prayerRequest">Special Prayer Request</label>
+                        <textarea id="prayerRequest" name="prayerRequest" rows="3" placeholder="Share your prayers with Lord Shiva"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="receiveUpdates" name="receiveUpdates" checked>
+                        <label for="receiveUpdates">Receive temple updates and blessings</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-donation-btn">
+                        <i class="fas fa-heart"></i> Complete Donation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🕉️ शिव मंदिर</h3>
+                    <p>Your donations help us serve the divine and support our community</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Donation Options</h4>
+                    <ul>
+                        <li><a href="#maha-aarti">Maha Aarti</a></li>
+                        <li><a href="#evening-aarti">Evening Aarti</a></li>
+                        <li><a href="#annadaan">Annadaan</a></li>
+                        <li><a href="#custom">Custom Amount</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: donations@shivatemple.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Tax ID: 12345678901</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Temple. All donations are tax-deductible. 🙏</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let currentDonation = {
+            amount: 0,
+            type: '',
+            purpose: ''
+        };
+
+        function makeDonation(amount, type) {
+            currentDonation.amount = amount;
+            currentDonation.type = type;
+            currentDonation.purpose = type;
+            
+            document.getElementById('donationType').textContent = type;
+            document.getElementById('donationAmount').textContent = amount;
+            
+            // Auto-fill form if user is logged in
+            const userData = localStorage.getItem('templeUser');
+            if (userData) {
+                const user = JSON.parse(userData);
+                document.getElementById('donorName').value = user.fullName || '';
+                document.getElementById('donorEmail').value = user.email || '';
+                document.getElementById('donorPhone').value = user.phone || '';
+            }
+            
+            document.getElementById('donationModal').style.display = 'block';
+        }
+
+        function makeCustomDonation() {
+            const amount = document.getElementById('customAmount').value;
+            const purpose = document.getElementById('customPurpose').value || 'Custom Donation';
+            
+            if (!amount || amount <= 0) {
+                showNotification('Please enter a valid amount', 'error');
+                return;
+            }
+            
+            makeDonation(parseInt(amount), purpose);
+        }
+
+        function closeModal() {
+            document.getElementById('donationModal').style.display = 'none';
+        }
+
+        function processDonation(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const donorData = Object.fromEntries(formData);
+            
+            const donation = {
+                ...currentDonation,
+                donor: donorData,
+                date: new Date().toISOString(),
+                id: 'DON' + Date.now()
+            };
+            
+            // Store donation in localStorage
+            let donations = JSON.parse(localStorage.getItem('templeDonations')) || [];
+            donations.push(donation);
+            localStorage.setItem('templeDonations', JSON.stringify(donations));
+            
+            // Show success message
+            showNotification('🙏 Thank you for your sacred donation! Lord Shiva blesses you.', 'success');
+            
+            // Close modal
+            closeModal();
+            
+            // Show receipt
+            showDonationReceipt(donation);
+        }
+
+        function showDonationReceipt(donation) {
+            const receiptHtml = `
+                <div class="donation-receipt">
+                    <h2>🏛️ Donation Receipt</h2>
+                    <div class="receipt-details">
+                        <p><strong>Donation ID:</strong> ${donation.id}</p>
+                        <p><strong>Amount:</strong> ₹${donation.amount}</p>
+                        <p><strong>Type:</strong> ${donation.type}</p>
+                        <p><strong>Donor:</strong> ${donation.donor.donorName}</p>
+                        <p><strong>Date:</strong> ${new Date(donation.date).toLocaleDateString()}</p>
+                        <p><strong>Email:</strong> ${donation.donor.donorEmail}</p>
+                        ${donation.donor.prayerRequest ? `<p><strong>Prayer:</strong> ${donation.donor.prayerRequest}</p>` : ''}
+                    </div>
+                    <div class="receipt-blessing">
+                        <p>🕉️ "May Lord Shiva shower his divine blessings upon you and your family"</p>
+                        <p>Your donation helps us serve the divine and support our community.</p>
+                    </div>
+                    <button onclick="printReceipt()" class="print-btn">
+                        <i class="fas fa-print"></i> Print Receipt
+                    </button>
+                </div>
+            `;
+            
+            const receiptModal = document.createElement('div');
+            receiptModal.className = 'modal active';
+            receiptModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-btn" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                    ${receiptHtml}
+                </div>
+            `;
+            
+            document.body.appendChild(receiptModal);
+        }
+
+        function printReceipt() {
+            const receiptContent = document.querySelector('.donation-receipt').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Donation Receipt</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 20px; }
+                            .donation-receipt { max-width: 600px; margin: 0 auto; }
+                            .receipt-details p { margin: 10px 0; }
+                            .receipt-blessing { margin: 20px 0; text-align: center; font-style: italic; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="donation-receipt">${receiptContent}</div>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('donationModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Add floating animation to donation cards
+        document.querySelectorAll('.donation-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add donation counter animation
+        function animateCounter() {
+            const counters = document.querySelectorAll('.donation-amount');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace('₹', '').replace(',', ''));
+                let current = 0;
+                const increment = target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = '₹' + Math.floor(current).toLocaleString();
+                }, 50);
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(animateCounter, 1000);
+        });
+    </script>
+
+    <style>
+        .donation-section {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #FF6B35 0%, #FFD700 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .donation-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="15" fill="white" opacity="0.1">💰</text></svg>');
+        }
+
+        .donation-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .donation-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .donation-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blessing-quote {
+            margin-top: 2rem;
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .donation-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .donation-card.featured {
+            transform: scale(1.05);
+            border: 3px solid var(--accent-color);
+        }
+
+        .donation-card.custom {
+            border: 2px dashed var(--primary-color);
+        }
+
+        .card-header {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .donate-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-bg);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-amount {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-amount input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .donation-impact, .donation-testimonials {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .donation-impact h2, .donation-testimonials h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .impact-grid, .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .impact-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-author span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: var(--text-light);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-body h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .donation-summary {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-color);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .donation-summary h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .amount-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .submit-donation-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--gradient-bg);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-donation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .donation-receipt {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .donation-receipt h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+        }
+
+        .receipt-details {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .receipt-details p {
+            margin: 0.5rem 0;
+            color: var(--text-dark);
+        }
+
+        .receipt-blessing {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .print-btn {
+            padding: 0.8rem 2rem;
+            background: var(--gradient-bg);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .donation-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-card.featured {
+                transform: none;
+            }
+            
+            .impact-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</body>
+</html>
