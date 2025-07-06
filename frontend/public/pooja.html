@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Pooja Events - Shiva Temple</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="om-symbol">🕉️</span>
+                <h2>शिव मंदिर</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="signup.html" class="nav-link">Join Temple</a></li>
+                <li><a href="kundali.html" class="nav-link">Kundali</a></li>
+                <li><a href="donation.html" class="nav-link">Donation</a></li>
+                <li><a href="ornaments.html" class="nav-link">Sacred Items</a></li>
+                <li><a href="#" class="nav-link active">Pooja Events</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pooja Events Section -->
+    <section class="pooja-section">
+        <div class="pooja-background">
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="pooja-header">
+                <div class="pooja-icon">🔥</div>
+                <h1>Sacred Pooja Events</h1>
+                <p>Join our divine ceremonies and special spiritual celebrations</p>
+                <div class="live-indicator">
+                    <span class="live-dot"></span>
+                    <span>Live ceremonies available</span>
+                </div>
+            </div>
+
+            <!-- Event Categories -->
+            <div class="event-categories">
+                <button class="category-btn active" onclick="filterEvents('all')">All Events</button>
+                <button class="category-btn" onclick="filterEvents('daily')">Daily Aarti</button>
+                <button class="category-btn" onclick="filterEvents('special')">Special Ceremonies</button>
+                <button class="category-btn" onclick="filterEvents('festival')">Festivals</button>
+                <button class="category-btn" onclick="filterEvents('live')">Live Events</button>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="events-container">
+                <div class="section-header">
+                    <h2>🌟 Upcoming Events</h2>
+                    <p>Book your participation in our sacred ceremonies</p>
+                </div>
+
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Events will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- Live Stream Section -->
+            <div class="live-section">
+                <h2>📺 Live Temple Stream</h2>
+                <div class="live-stream-container">
+                    <div class="stream-placeholder">
+                        <i class="fas fa-video"></i>
+                        <h3>Live Temple Darshan</h3>
+                        <p>Experience the divine presence of Lord Shiva from your home</p>
+                        <button class="watch-live-btn" onclick="startLiveStream()">
+                            <i class="fas fa-play-circle"></i> Watch Live
+                        </button>
+                    </div>
+                    <div class="stream-schedule">
+                        <h4>🕒 Live Stream Schedule</h4>
+                        <div class="schedule-item">
+                            <span class="time">5:00 AM - 6:00 AM</span>
+                            <span class="event">Morning Aarti</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">12:00 PM - 12:30 PM</span>
+                            <span class="event">Midday Abhishek</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">7:00 PM - 8:00 PM</span>
+                            <span class="event">Evening Aarti</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">9:00 PM - 9:30 PM</span>
+                            <span class="event">Night Prayers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Calendar -->
+            <div class="calendar-section">
+                <h2>📅 Monthly Pooja Calendar</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="nav-btn" onclick="changeMonth(-1)">&lt;</button>
+                        <h3 id="currentMonth"></h3>
+                        <button class="nav-btn" onclick="changeMonth(1)">&gt;</button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pooja Packages -->
+            <div class="packages-section">
+                <h2>🎁 Pooja Packages</h2>
+                <div class="packages-grid">
+                    <div class="package-card featured">
+                        <div class="package-header">
+                            <h3>🏆 Premium Package</h3>
+                            <div class="package-price">₹2,108/month</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Daily name recitation in all aartis</li>
+                                <li>✓ Weekly special abhishek</li>
+                                <li>✓ Monthly prasad delivery</li>
+                                <li>✓ Priority booking for festivals</li>
+                                <li>✓ Personalized blessing certificate</li>
+                                <li>✓ Live stream access</li>
+                            </ul>
+                        </div>
+                        <button class="package-btn" onclick="selectPackage('premium')">
+                            <i class="fas fa-crown"></i> Select Premium
+                        </button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>🌟 Standard Package</h3>
+                            <div class="package-price">₹1,108/month</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Name in evening aarti</li>
+                                <li>✓ Bi-weekly abhishek</li>
+                                <li>✓ Festival notifications</li>
+                                <li>✓ Live stream access</li>
+                                <li>✓ Digital blessings</li>
+                            </ul>
+                        </div>
+                        <button class="package-btn" onclick="selectPackage('standard')">
+                            <i class="fas fa-star"></i> Select Standard
+                        </button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>🌸 Basic Package</h3>
+                            <div class="package-price">₹501/month</div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>✓ Weekly name recitation</li>
+                                <li>✓ Festival participation</li>
+                                <li>✓ Live stream access</li>
+                                <li>✓ Monthly blessings</li>
+                            </ul>
+                        </div>
+                        <button class="package-btn" onclick="selectPackage('basic')">
+                            <i class="fas fa-flower"></i> Select Basic
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Booking Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEventModal()">&times;</span>
+            <div class="event-modal-content" id="eventModalContent">
+                <!-- Event details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Selection Modal -->
+    <div class="modal" id="packageModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePackageModal()">&times;</span>
+            <h2>🎁 Select Pooja Package</h2>
+            <div class="package-modal-content">
+                <div class="selected-package" id="selectedPackage">
+                    <!-- Selected package details -->
+                </div>
+                <form id="packageForm" onsubmit="bookPackage(event)">
+                    <div class="form-group">
+                        <label for="subscriberName">Full Name *</label>
+                        <input type="text" id="subscriberName" name="subscriberName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subscriberEmail">Email *</label>
+                        <input type="email" id="subscriberEmail" name="subscriberEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subscriberPhone">Phone *</label>
+                        <input type="tel" id="subscriberPhone" name="subscriberPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subscriberAddress">Address</label>
+                        <textarea id="subscriberAddress" name="subscriberAddress" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialPrayers">Special Prayers/Intentions</label>
+                        <textarea id="specialPrayers" name="specialPrayers" rows="3" placeholder="Share your prayers and intentions"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-check-circle"></i> Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🕉️ शिव मंदिर</h3>
+                    <p>Join our sacred ceremonies and receive divine blessings</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Types</h4>
+                    <ul>
+                        <li><a href="#daily">Daily Aarti</a></li>
+                        <li><a href="#special">Special Ceremonies</a></li>
+                        <li><a href="#festivals">Festivals</a></li>
+                        <li><a href="#live">Live Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Temple</h4>
+                    <p>Email: events@shivatemple.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Live Support: 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Temple. Sacred ceremonies for divine blessings. 🙏</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Event data
+        const events = [
+            {
+                id: 1,
+                title: "Morning Maha Aarti",
+                category: "daily",
+                date: "2024-12-20",
+                time: "05:00",
+                duration: "60 minutes",
+                priest: "Pandit Raj Kumar",
+                description: "Start your day with divine blessings through our morning Maha Aarti ceremony",
+                price: 51,
+                maxParticipants: 50,
+                currentParticipants: 23,
+                isLive: true,
+                benefits: ["Divine blessings", "Positive energy", "Peaceful mind", "Spiritual awakening"]
+            },
+            {
+                id: 2,
+                title: "Rudra Abhishek",
+                category: "special",
+                date: "2024-12-22",
+                time: "18:00",
+                duration: "90 minutes",
+                priest: "Pandit Shiva Shankar",
+                description: "Sacred Rudra Abhishek ceremony for Lord Shiva with milk, honey, and sacred waters",
+                price: 251,
+                maxParticipants: 30,
+                currentParticipants: 15,
+                isLive: false,
+                benefits: ["Spiritual purification", "Remove obstacles", "Divine protection", "Inner peace"]
+            },
+            {
+                id: 3,
+                title: "Maha Shivaratri Celebration",
+                category: "festival",
+                date: "2024-12-25",
+                time: "20:00",
+                duration: "240 minutes",
+                priest: "Pandit Mahadev Das",
+                description: "Grand Maha Shivaratri celebration with special prayers, bhajans, and rituals",
+                price: 501,
+                maxParticipants: 100,
+                currentParticipants: 67,
+                isLive: true,
+                benefits: ["Festival blessings", "Spiritual merit", "Divine grace", "Liberation"]
+            },
+            {
+                id: 4,
+                title: "Evening Aarti",
+                category: "daily",
+                date: "2024-12-20",
+                time: "19:00",
+                duration: "45 minutes",
+                priest: "Pandit Ram Krishna",
+                description: "Peaceful evening aarti with devotional songs and prayers",
+                price: 31,
+                maxParticipants: 40,
+                currentParticipants: 28,
+                isLive: true,
+                benefits: ["Evening peace", "Divine protection", "Spiritual growth", "Inner harmony"]
+            },
+            {
+                id: 5,
+                title: "Soma Pradosh Vrat",
+                category: "special",
+                date: "2024-12-23",
+                time: "17:30",
+                duration: "120 minutes",
+                priest: "Pandit Vishnu Sharma",
+                description: "Special Pradosh Vrat ceremony performed on Monday for Lord Shiva",
+                price: 108,
+                maxParticipants: 25,
+                currentParticipants: 12,
+                isLive: false,
+                benefits: ["Wish fulfillment", "Prosperity", "Health", "Spiritual advancement"]
+            },
+            {
+                id: 6,
+                title: "Laghu Rudra Puja",
+                category: "special",
+                date: "2024-12-24",
+                time: "16:00",
+                duration: "150 minutes",
+                priest: "Pandit Kedarnath",
+                description: "Powerful Laghu Rudra Puja with 121 Rudra mantras",
+                price: 786,
+                maxParticipants: 11,
+                currentParticipants: 7,
+                isLive: false,
+                benefits: ["Powerful blessings", "Obstacle removal", "Spiritual power", "Divine protection"]
+            }
+        ];
+
+        let currentFilter = 'all';
+        let currentDate = new Date();
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadEvents();
+            generateCalendar();
+            updateCurrentMonth();
+        });
+
+        // Load events based on filter
+        function loadEvents() {
+            const grid = document.getElementById('eventsGrid');
+            const filteredEvents = currentFilter === 'all' ? events : events.filter(e => e.category === currentFilter);
+            
+            grid.innerHTML = filteredEvents.map(event => `
+                <div class="event-card ${event.isLive ? 'live' : ''}" data-category="${event.category}">
+                    ${event.isLive ? '<div class="live-badge">🔴 Live</div>' : ''}
+                    <div class="event-header">
+                        <h3>${event.title}</h3>
+                        <div class="event-meta">
+                            <span class="event-date">📅 ${formatDate(event.date)}</span>
+                            <span class="event-time">🕐 ${event.time}</span>
+                        </div>
+                    </div>
+                    <div class="event-body">
+                        <p class="event-description">${event.description}</p>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duration: ${event.duration}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <span>Priest: ${event.priest}</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>${event.currentParticipants}/${event.maxParticipants} joined</span>
+                            </div>
+                        </div>
+                        <div class="event-price">
+                            <span class="price">₹${event.price}</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="view-details-btn" onclick="viewEvent(${event.id})">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </button>
+                            <button class="book-event-btn" onclick="bookEvent(${event.id})">
+                                <i class="fas fa-ticket-alt"></i> Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter events
+        function filterEvents(category) {
+            currentFilter = category;
+            loadEvents();
+            
+            // Update filter buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                weekday: 'short', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        // View event details
+        function viewEvent(eventId) {
+            const event = events.find(e => e.id === eventId);
+            if (!event) return;
+
+            document.getElementById('eventModalContent').innerHTML = `
+                <div class="event-detail">
+                    <div class="event-detail-header">
+                        <h2>${event.title}</h2>
+                        ${event.isLive ? '<span class="live-indicator"><span class="live-dot"></span> Live Event</span>' : ''}
+                    </div>
+                    <div class="event-detail-info">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <strong>Date</strong>
+                                    <p>${formatDate(event.date)}</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Time</strong>
+                                    <p>${event.time} (${event.duration})</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <strong>Priest</strong>
+                                    <p>${event.priest}</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <strong>Participants</strong>
+                                    <p>${event.currentParticipants}/${event.maxParticipants}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-description-full">
+                            <h4>About This Ceremony</h4>
+                            <p>${event.description}</p>
+                        </div>
+                        <div class="event-benefits">
+                            <h4>Benefits</h4>
+                            <ul>
+                                ${event.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="event-pricing">
+                            <div class="price-display">₹${event.price}</div>
+                            <div class="price-note">per person</div>
+                        </div>
+                        <button class="book-now-btn" onclick="bookEvent(${event.id}); closeEventModal();">
+                            <i class="fas fa-ticket-alt"></i> Book Your Participation
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('eventModal').style.display = 'block';
+        }
+
+        // Close event modal
+        function closeEventModal() {
+            document.getElementById('eventModal').style.display = 'none';
+        }
+
+        // Book event
+        function bookEvent(eventId) {
+            const event = events.find(e => e.id === eventId);
+            if (!event) return;
+
+            if (event.currentParticipants >= event.maxParticipants) {
+                showNotification('This event is fully booked!', 'error');
+                return;
+            }
+
+            // Simulate booking process
+            const booking = {
+                id: 'BK' + Date.now(),
+                eventId: eventId,
+                eventTitle: event.title,
+                date: event.date,
+                time: event.time,
+                price: event.price,
+                bookedDate: new Date().toISOString()
+            };
+
+            // Store booking
+            let bookings = JSON.parse(localStorage.getItem('templeBookings')) || [];
+            bookings.push(booking);
+            localStorage.setItem('templeBookings', JSON.stringify(bookings));
+
+            // Update participant count
+            event.currentParticipants += 1;
+
+            showNotification(`🙏 Successfully booked ${event.title}! Booking ID: ${booking.id}`, 'success');
+            loadEvents(); // Refresh events display
+        }
+
+        // Select package
+        function selectPackage(packageType) {
+            const packages = {
+                basic: { name: 'Basic Package', price: 501, features: ['Weekly name recitation', 'Festival participation', 'Live stream access', 'Monthly blessings'] },
+                standard: { name: 'Standard Package', price: 1108, features: ['Name in evening aarti', 'Bi-weekly abhishek', 'Festival notifications', 'Live stream access', 'Digital blessings'] },
+                premium: { name: 'Premium Package', price: 2108, features: ['Daily name recitation in all aartis', 'Weekly special abhishek', 'Monthly prasad delivery', 'Priority booking for festivals', 'Personalized blessing certificate', 'Live stream access'] }
+            };
+
+            const selectedPkg = packages[packageType];
+            
+            document.getElementById('selectedPackage').innerHTML = `
+                <div class="package-summary">
+                    <h3>${selectedPkg.name}</h3>
+                    <div class="package-price">₹${selectedPkg.price}/month</div>
+                    <ul>
+                        ${selectedPkg.features.map(feature => `<li>✓ ${feature}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Set start date to today
+            document.getElementById('startDate').value = new Date().toISOString().split('T')[0];
+
+            // Auto-fill if user is logged in
+            const userData = localStorage.getItem('templeUser');
+            if (userData) {
+                const user = JSON.parse(userData);
+                document.getElementById('subscriberName').value = user.fullName || '';
+                document.getElementById('subscriberEmail').value = user.email || '';
+                document.getElementById('subscriberPhone').value = user.phone || '';
+            }
+
+            document.getElementById('packageModal').style.display = 'block';
+        }
+
+        // Close package modal
+        function closePackageModal() {
+            document.getElementById('packageModal').style.display = 'none';
+        }
+
+        // Book package
+        function bookPackage(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const subscriberData = Object.fromEntries(formData);
+            
+            const packageName = document.querySelector('#selectedPackage h3').textContent;
+            const packagePrice = document.querySelector('#selectedPackage .package-price').textContent;
+            
+            const subscription = {
+                id: 'SUB' + Date.now(),
+                package: packageName,
+                price: packagePrice,
+                subscriber: subscriberData,
+                startDate: subscriberData.startDate,
+                status: 'active',
+                subscribedDate: new Date().toISOString()
+            };
+
+            // Store subscription
+            let subscriptions = JSON.parse(localStorage.getItem('templeSubscriptions')) || [];
+            subscriptions.push(subscription);
+            localStorage.setItem('templeSubscriptions', JSON.stringify(subscriptions));
+
+            closePackageModal();
+            showNotification(`🎉 Successfully subscribed to ${packageName}! Subscription ID: ${subscription.id}`, 'success');
+        }
+
+        // Start live stream
+        function startLiveStream() {
+            showNotification('🔴 Connecting to live temple stream...', 'info');
+            
+            setTimeout(() => {
+                document.querySelector('.stream-placeholder').innerHTML = `
+                    <div class="live-video">
+                        <div class="video-player">
+                            <div class="video-overlay">
+                                <h3>🔴 Live Temple Darshan</h3>
+                                <p>Om Namah Shivaya</p>
+                                <div class="live-controls">
+                                    <button onclick="stopLiveStream()">
+                                        <i class="fas fa-stop"></i> Stop Stream
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="live-chat">
+                            <h4>Live Chat</h4>
+                            <div class="chat-messages">
+                                <div class="chat-message">
+                                    <strong>Devotee1:</strong> Om Namah Shivaya 🙏
+                                </div>
+                                <div class="chat-message">
+                                    <strong>Devotee2:</strong> Har Har Mahadev ✨
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" placeholder="Send a message...">
+                                <button><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                showNotification('🙏 Connected to live temple stream!', 'success');
+            }, 2000);
+        }
+
+        // Stop live stream
+        function stopLiveStream() {
+            document.querySelector('.stream-placeholder').innerHTML = `
+                <i class="fas fa-video"></i>
+                <h3>Live Temple Darshan</h3>
+                <p>Experience the divine presence of Lord Shiva from your home</p>
+                <button class="watch-live-btn" onclick="startLiveStream()">
+                    <i class="fas fa-play-circle"></i> Watch Live
+                </button>
+            `;
+        }
+
+        // Calendar functions
+        function generateCalendar() {
+            const calendar = document.getElementById('calendarGrid');
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+            let calendarHTML = '';
+            
+            // Week headers
+            const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            weekDays.forEach(day => {
+                calendarHTML += `<div class="calendar-header-day">${day}</div>`;
+            });
+
+            // Calendar days
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const isCurrentMonth = date.getMonth() === currentDate.getMonth();
+                const isToday = date.toDateString() === new Date().toDateString();
+                const hasEvent = events.some(event => event.date === date.toISOString().split('T')[0]);
+                
+                calendarHTML += `
+                    <div class="calendar-day ${isCurrentMonth ? 'current-month' : 'other-month'} ${isToday ? 'today' : ''} ${hasEvent ? 'has-event' : ''}">
+                        <span class="day-number">${date.getDate()}</span>
+                        ${hasEvent ? '<div class="event-dot"></div>' : ''}
+                    </div>
+                `;
+            }
+
+            calendar.innerHTML = calendarHTML;
+        }
+
+        function updateCurrentMonth() {
+            document.getElementById('currentMonth').textContent = currentDate.toLocaleDateString('en-US', { 
+                month: 'long', 
+                year: 'numeric' 
+            });
+        }
+
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            generateCalendar();
+            updateCurrentMonth();
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .pooja-section {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #FF6B35 0%, #4A90E2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .pooja-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="15" fill="white" opacity="0.1">🔥</text></svg>');
+        }
+
+        .pooja-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pooja-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .pooja-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            display: inline-flex;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #e74c3c;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .event-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .events-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-card.live {
+            border: 2px solid #e74c3c;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .event-header {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .event-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .event-body {
+            padding: 1.5rem;
+        }
+
+        .event-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .event-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .detail-item i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+
+        .event-price {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light-color);
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+        }
+
+        .price-note {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .view-details-btn, .book-event-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .view-details-btn {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .book-event-btn {
+            background: var(--gradient-bg);
+            color: white;
+        }
+
+        .view-details-btn:hover, .book-event-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Live Stream Section */
+        .live-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .live-section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .live-stream-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .stream-placeholder {
+            background: var(--light-color);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px dashed var(--primary-color);
+        }
+
+        .stream-placeholder i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .stream-placeholder h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .watch-live-btn {
+            padding: 1rem 2rem;
+            background: var(--gradient-bg);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .watch-live-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .stream-schedule {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stream-schedule h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .event {
+            color: var(--text-dark);
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .calendar-section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-header h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .calendar-header-day {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .calendar-day {
+            background: white;
+            padding: 1rem;
+            text-align: center;
+            min-height: 80px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .calendar-day:hover {
+            background: var(--light-color);
+        }
+
+        .calendar-day.today {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+
+        .calendar-day.other-month {
+            opacity: 0.3;
+        }
+
+        .calendar-day.has-event {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .event-dot {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Packages Section */
+        .packages-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .packages-section h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-card.featured {
+            transform: scale(1.05);
+            border: 3px solid var(--accent-color);
+        }
+
+        .package-header {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .package-card.featured .package-header {
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+        }
+
+        .package-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+        }
+
+        .package-features {
+            padding: 2rem;
+        }
+
+        .package-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-bg);
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .package-btn:hover {
+            background: linear-gradient(135deg, #e55a2b 0%, #3a7bc8 100%);
+        }
+
+        /* Live Video Styles */
+        .live-video {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            height: 400px;
+        }
+
+        .video-player {
+            background: #000;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .live-controls {
+            margin-top: 2rem;
+        }
+
+        .live-controls button {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .live-chat {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+
+        .chat-message {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chat-input button {
+            padding: 0.5rem;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .live-stream-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .live-video {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card.featured {
+                transform: none;
+            }
+            
+            .event-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
