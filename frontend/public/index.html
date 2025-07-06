@@ -1,151 +1,245 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕉️ Shiva Temple - Sacred Digital Ashram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Damru Loader -->
+    <div class="loader-container" id="loader">
+        <div class="damru-loader">
+            <div class="damru">
+                <div class="damru-top"></div>
+                <div class="damru-middle"></div>
+                <div class="damru-bottom"></div>
+                <div class="damru-strings">
+                    <div class="string left"></div>
+                    <div class="string right"></div>
+                </div>
             </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+            <div class="loader-text">
+                <div class="om-symbol">🕉️</div>
+                <p>हर हर महादेव</p>
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <audio id="damruSound" loop>
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="om-symbol">🕉️</span>
+                <h2>शिव मंदिर</h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="signup.html" class="nav-link">Join Temple</a></li>
+                <li><a href="kundali.html" class="nav-link">Kundali</a></li>
+                <li><a href="donation.html" class="nav-link">Donation</a></li>
+                <li><a href="ornaments.html" class="nav-link">Sacred Items</a></li>
+                <li><a href="pooja.html" class="nav-link">Pooja Events</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-particles"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="sanskrit">हर हर महादेव</span>
+                        <span class="english">Lord Shiva Digital Temple</span>
+                    </h1>
+                    <p class="hero-subtitle">Experience the divine presence of Lord Shiva in our sacred digital ashram</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button primary" onclick="playMantra()">
+                            <i class="fas fa-play"></i> Start Meditation
+                        </button>
+                        <button class="cta-button secondary" onclick="scrollToSection('about')">
+                            <i class="fas fa-temple"></i> Explore Temple
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="shiva-statue">
+                        <img src="https://images.unsplash.com/photo-1609609830354-8f615d61b9c8" alt="Lord Shiva Statue" class="main-statue">
+                        <div class="divine-aura"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔱 About Our Sacred Temple</h2>
+                <p>Discover the eternal wisdom of Lord Shiva</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Eternal Cosmic Dancer</h3>
+                    <p>Lord Shiva, the destroyer and transformer, represents the cosmic forces of creation, preservation, and destruction. In our digital temple, we honor his divine presence through sacred rituals, meditation, and spiritual learning.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-om"></i>
+                            <h4>Sacred Mantras</h4>
+                            <p>Chant powerful mantras for inner peace</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-dove"></i>
+                            <h4>Spiritual Guidance</h4>
+                            <p>Receive divine guidance for your journey</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lotus"></i>
+                            <h4>Meditation Practices</h4>
+                            <p>Learn ancient meditation techniques</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1702398460766-df7410e5e4a5" alt="Shiva Meditation" class="about-img">
+                    <img src="https://images.unsplash.com/photo-1566890910598-c5768889e83e" alt="Temple Architecture" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>🌟 Sacred Services</h2>
+                <p>Explore our spiritual offerings</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="navigateTo('kundali.html')">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Kundali Reading</h3>
+                    <p>Get your personalized astrological chart and spiritual guidance</p>
+                    <button class="service-btn">Explore</button>
+                </div>
+                <div class="service-card" onclick="navigateTo('pooja.html')">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Pooja Ceremonies</h3>
+                    <p>Join our sacred rituals and ceremonies for spiritual blessings</p>
+                    <button class="service-btn">Join</button>
+                </div>
+                <div class="service-card" onclick="navigateTo('donation.html')">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Sacred Donations</h3>
+                    <p>Support our temple and receive divine blessings</p>
+                    <button class="service-btn">Donate</button>
+                </div>
+                <div class="service-card" onclick="navigateTo('ornaments.html')">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Sacred Items</h3>
+                    <p>Discover blessed rudraksha, yantras, and spiritual accessories</p>
+                    <button class="service-btn">Shop</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>🖼️ Sacred Gallery</h2>
+                <p>Witness the divine beauty of Lord Shiva</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/32777449/pexels-photo-32777449.jpeg" alt="Nataraja">
+                    <div class="gallery-overlay">
+                        <h3>Nataraja - Cosmic Dancer</h3>
+                        <p>The eternal dance of creation and destruction</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/32858874/pexels-photo-32858874.jpeg" alt="Temple Architecture">
+                    <div class="gallery-overlay">
+                        <h3>Sacred Architecture</h3>
+                        <p>Divine craftsmanship in stone and devotion</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1609609830354-8f615d61b9c8" alt="Meditation">
+                    <div class="gallery-overlay">
+                        <h3>Divine Meditation</h3>
+                        <p>Lord Shiva in eternal contemplation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🕉️ शिव मंदिर</h3>
+                    <p>Experience the divine presence of Lord Shiva in our sacred digital ashram</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="signup.html">Join Temple</a></li>
+                        <li><a href="kundali.html">Kundali Reading</a></li>
+                        <li><a href="donation.html">Donations</a></li>
+                        <li><a href="pooja.html">Pooja Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sacred Hours</h4>
+                    <p>Morning Prayer: 5:00 AM - 8:00 AM</p>
+                    <p>Evening Aarti: 6:00 PM - 9:00 PM</p>
+                    <p>Meditation: 24/7 Online</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Temple. Made with devotion and love. 🙏</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
