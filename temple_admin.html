@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕉️ Temple Admin Panel</title>
+    <link rel="stylesheet" href="temple_admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🕉️ Temple Admin</h1>
+                <p>Admin Panel Login</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="loginError" class="error-message hidden"></div>
+                <button type="submit" class="btn-login">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loading hidden">Logging in...</span>
+                </button>
+                <div class="login-hint">
+                    <p>Default: admin / admin123</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboardScreen" class="dashboard-screen hidden">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>🕉️ Temple Admin Panel</h1>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-container">
+                <button class="nav-btn active" data-tab="dashboard">
+                    <i class="fas fa-chart-bar"></i> Dashboard
+                </button>
+                <button class="nav-btn" data-tab="kundali">
+                    <i class="fas fa-user-astronaut"></i> Kundali Users
+                </button>
+                <button class="nav-btn" data-tab="events">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </button>
+                <button class="nav-btn" data-tab="items">
+                    <i class="fas fa-shopping-bag"></i> Temple Items
+                </button>
+                <button class="nav-btn" data-tab="donations">
+                    <i class="fas fa-hand-holding-usd"></i> Donations
+                </button>
+                <button class="nav-btn" data-tab="stories">
+                    <i class="fas fa-book"></i> Stories
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Tab -->
+            <div id="dashboardTab" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔮</div>
+                        <h3>Kundali Users</h3>
+                        <p class="stat-number" id="kundaliCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <h3>Events</h3>
+                        <p class="stat-number" id="eventsCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🛍️</div>
+                        <h3>Temple Items</h3>
+                        <p class="stat-number" id="itemsCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <h3>Donations</h3>
+                        <p class="stat-number" id="donationsCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📖</div>
+                        <h3>Stories</h3>
+                        <p class="stat-number" id="storiesCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💵</div>
+                        <h3>Total Donations</h3>
+                        <p class="stat-number" id="totalDonations">₹0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kundali Users Tab -->
+            <div id="kundaliTab" class="tab-content">
+                <div class="tab-header">
+                    <h2>🔮 Kundali Users</h2>
+                    <button class="btn-add" onclick="showKundaliForm()">
+                        <i class="fas fa-plus"></i> Add User
+                    </button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Birth Date</th>
+                                <th>Birth Time</th>
+                                <th>Birth Place</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="kundaliTableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Events Tab -->
+            <div id="eventsTab" class="tab-content">
+                <div class="tab-header">
+                    <h2>📅 Events</h2>
+                    <button class="btn-add" onclick="showEventForm()">
+                        <i class="fas fa-plus"></i> Add Event
+                    </button>
+                </div>
+                <div class="cards-grid" id="eventsGrid">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Temple Items Tab -->
+            <div id="itemsTab" class="tab-content">
+                <div class="tab-header">
+                    <h2>🛍️ Temple Items</h2>
+                    <button class="btn-add" onclick="showItemForm()">
+                        <i class="fas fa-plus"></i> Add Item
+                    </button>
+                </div>
+                <div class="cards-grid" id="itemsGrid">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Donations Tab -->
+            <div id="donationsTab" class="tab-content">
+                <div class="tab-header">
+                    <h2>💰 Donations</h2>
+                    <button class="btn-add" onclick="showDonationForm()">
+                        <i class="fas fa-plus"></i> Add Donation
+                    </button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Donor Name</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Purpose</th>
+                                <th>Contact</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donationsTableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Stories Tab -->
+            <div id="storiesTab" class="tab-content">
+                <div class="tab-header">
+                    <h2>📖 Stories</h2>
+                    <button class="btn-add" onclick="showStoryForm()">
+                        <i class="fas fa-plus"></i> Add Story
+                    </button>
+                </div>
+                <div class="cards-grid" id="storiesGrid">
+                    <!-- Stories will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Forms -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Form content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script src="temple_admin.js"></script>
+</body>
+</html>
