@@ -3,9 +3,32 @@ import 'pages/admin_page.dart';
 import 'pages/team_member_page.dart';
 import 'pages/video_manager_page.dart';
 import 'pages/client_page.dart';
+import 'package:provider/provider.dart';
+import 'providers/data_provider.dart';
+import 'pages/admin/team_members_page.dart';
+import 'pages/admin/tasks_page.dart';
+import 'pages/admin/leads_page.dart';
+import 'pages/admin/meetings_page.dart';
+import 'pages/admin/workflow_page.dart';
+import 'pages/admin/invoices_page.dart';
+import 'pages/admin/clients_page.dart';
+import 'pages/admin/credentials_page.dart';
+import 'pages/admin/projects_page.dart';
 
 void main() {
-  runApp(const CrmApp());
+  runApp(const CrmRoot());
+}
+
+class CrmRoot extends StatelessWidget {
+  const CrmRoot({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => DataProvider(),
+      child: const CrmApp(),
+    );
+  }
 }
 
 class CrmApp extends StatelessWidget {
@@ -19,7 +42,19 @@ class CrmApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomeScreen(),
+      routes: {
+        '/': (_) => const HomeScreen(),
+        '/admin/teamMembers': (_) => const TeamMembersPage(),
+        '/admin/tasks': (_) => const TasksPage(),
+        '/admin/leads': (_) => const LeadsPage(),
+        '/admin/meetings': (_) => const MeetingsPage(),
+        '/admin/workflow': (_) => const WorkflowPage(),
+        '/admin/invoices': (_) => const InvoicesPage(),
+        '/admin/clients': (_) => const ClientsPage(),
+        '/admin/credentials': (_) => const CredentialsPage(),
+        '/admin/projects': (_) => const ProjectsPage(),
+      },
+      initialRoute: '/',
     );
   }
 }

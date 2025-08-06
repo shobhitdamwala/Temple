@@ -29,6 +29,37 @@ class AdminPage extends StatelessWidget {
             child: ListTile(
               leading: Icon(feature.icon, color: Colors.deepPurple),
               title: Text(feature.title),
+              onTap: () {
+                switch (feature.title) {
+                  case 'Add Team Members':
+                    Navigator.pushNamed(context, '/admin/teamMembers');
+                    break;
+                  case 'Assign Tasks':
+                    Navigator.pushNamed(context, '/admin/tasks');
+                    break;
+                  case 'View All Leads':
+                    Navigator.pushNamed(context, '/admin/leads');
+                    break;
+                  case 'Set Meetings':
+                    Navigator.pushNamed(context, '/admin/meetings');
+                    break;
+                  case 'Workflow Tracking':
+                    Navigator.pushNamed(context, '/admin/workflow');
+                    break;
+                  case 'Generate Invoices':
+                    Navigator.pushNamed(context, '/admin/invoices');
+                    break;
+                  case 'Show Client Details':
+                    Navigator.pushNamed(context, '/admin/clients');
+                    break;
+                  case 'Manage Client IDs & Passwords':
+                    Navigator.pushNamed(context, '/admin/credentials');
+                    break;
+                  case 'Add New Projects':
+                    Navigator.pushNamed(context, '/admin/projects');
+                    break;
+                }
+              },
             ),
           );
         },
